@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="text-center">
+      <h3>All Registered Students</h3>
+    </div>
+  
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search students...">
+      <button class="btn btn-primary" type="button" (click)="searchStudents()">Search</button>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-8" [class.col-md-12]="!selectedStudent" [class.col-md-8]="selectedStudent">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-light">
+              <tr>
+                <th (click)="sortTable('firstName')">First Name
+                  <span *ngIf="sortColumn === 'firstName'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('lastName')">Last Name
+                  <span *ngIf="sortColumn === 'lastName'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('mobile')">Mobile
+                  <span *ngIf="sortColumn === 'mobile'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('email')">Email
+                  <span *ngIf="sortColumn === 'email'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('nic')">NIC
+                  <span *ngIf="sortColumn === 'nic'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('dateOfBirth')">Date Of Birth
+                  <span *ngIf="sortColumn === 'dateOfBirth'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th (click)="sortTable('address')">Address
+                  <span *ngIf="sortColumn === 'address'" class="sort-icon">
+                    <i class="fa" [ngClass]="sortDirection === 'asc' ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                  </span>
+                </th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of pagedStudents" (click)="onRowClick(student)">
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.mobile }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.nic }}</td>
+                <td>{{ student.dateOfBirth | date }}</td>
+                <td>{{ student.address }}</td>
+                <td>
+                  <img [src]="student.profileImageUrl ? student.profileImageUrl : defaultImageUrl"
+                       class="img-thumbnail"
+                       width="50">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <nav>
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" (click)="previousPage()">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" (click)="nextPage()">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  
+      <div *ngIf="selectedStudent" class="col-md-4">
+        <app-student-detail [student]="selectedStudent" (close)="selectedStudent = null"></app-student-detail>
+      </div>
+    </div>
+  </div>
+  

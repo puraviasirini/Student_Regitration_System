@@ -1,0 +1,94 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist/
+/tmp/
+/out-tsc/
+
+# dependencies
+/node_modules/
+/bower_components/
+
+# IDEs and editors
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swn
+*.swo
+*.swp
+*.out
+*.log
+*.log?
+*.bak
+*.vspscc
+*.vssscc
+._*
+.vscode/
+
+# misc
+/.sass-cache/
+/connect.lock
+/coverage/
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Angular CLI
+.angular-cli.json
+.angular-cli/
+.angular/
+.karma.js
+.karma-coverage/
+karma.conf.js
+protractor.conf.js
+e2e/
+
+# Angular Universal
+/dist-server/
+/server/
+generated/
+
+# Environment Variables
+.env
+.env.prod
+.env.prod.local
+.env.local
+
+# Jest
+/coverage/
+/jest-results.json
+/jest.config.js
+
+# Jest Snapshots
+/snapshot/
+*.snap
+
+# Cypress
+/cypress/screenshots/
+/cypress/videos/
+
+# Ignoring package-lock.json
+package-lock.json
+
+# Ignoring lock files
+yarn.lock
+
+# Storybook
+/storybook-static/
+
+# End

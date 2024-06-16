@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Add Student</h2>
+  
+    <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="student.firstName" required>
+        <div *ngIf="submitted && !studentForm.controls['firstName']?.valid" class="text-danger">
+          First Name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="student.lastName" required>
+        <div *ngIf="submitted && !studentForm.controls['lastName']?.valid" class="text-danger">
+          Last Name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="text" class="form-control" id="mobile" name="mobile" [(ngModel)]="student.mobile" required>
+        <div *ngIf="submitted && !studentForm.controls['mobile']?.valid" class="text-danger">
+          Mobile is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="student.email" required>
+        <div *ngIf="submitted && !studentForm.controls['email']?.valid" class="text-danger">
+          Email is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nic" class="form-label">NIC</label>
+        <input type="text" class="form-control" id="nic" name="nic" [(ngModel)]="student.nic" required>
+        <div *ngIf="submitted && !studentForm.controls['nic']?.valid" class="text-danger">
+          NIC is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="dateOfBirth" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="student.dateOfBirth">
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" name="address" [(ngModel)]="student.address"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="profileImage" class="form-label">Profile Image</label>
+        <input type="file" (change)="onFileSelected($event)" class="form-control" id="profileImage" name="profileImage">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

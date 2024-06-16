@@ -1,0 +1,45 @@
+<div class="container" *ngIf="student">
+    <h2>Student Details</h2>
+  
+    <div class="mb-3">
+        <img [src]="student.profileImageUrl ? student.profileImageUrl : 'assets/no-profile-image.png'" 
+             alt="Profile Image" 
+             class="img-fluid" 
+             style="max-width: 150px; max-height: 150px;">
+      </div>
+  
+    <form (ngSubmit)="saveStudent()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName" required>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" name="lastName" required>
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="text" class="form-control" id="mobile" [(ngModel)]="student.mobile" name="mobile" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="student.email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="nic" class="form-label">NIC</label>
+        <input type="text" class="form-control" id="nic" [(ngModel)]="student.nic" name="nic" required>
+      </div>
+      <div class="mb-3">
+        <label for="dateOfBirth" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dateOfBirth" [(ngModel)]="student.dateOfBirth" name="dateOfBirth" required>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" [(ngModel)]="student.address" name="address" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-danger" (click)="deleteStudent()">Delete</button>
+      <button type="button" class="btn btn-secondary" (click)="close.emit()">Close</button>
+    </form>
+  </div>
+  
