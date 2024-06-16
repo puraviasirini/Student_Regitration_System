@@ -1,0 +1,53 @@
+# Ignore Visual Studio temporary files, build results, and
+# Include if they should be committed to source control
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.aps
+*.cache
+*.ilk
+*.ncb
+*.obj
+*.pdb
+*.ipch
+*.pch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.unsuccessfulbuild
+*.vsdconfig
+*.vsdconfigbackup
+.vscode/
+.vs/
+.vsscc
+
+# Ignore .NET Core build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Nn][Yy][Cc][Pp][Uu]/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bin/
+obj/
+
+# Ignore node_modules
+frontend/node_modules/
+frontend/dist/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
